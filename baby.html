@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вопрос с выбором</title>
+</head>
+<body>
+    <h2>Димаш гей?</h2>
+    
+    <form id="questionForm">
+        <label>
+            <input type="radio" name="answer" value="yes">
+            Да
+        </label><br>
+        <label>
+            <input type="radio" name="answer" value="no" disabled>
+            Нет
+        </label><br><br>
+        
+        <button type="button" onclick="submitAnswer()">Ответить</button>
+    </form>
+    
+    <p id="result"></p>
+
+    <script>
+        function submitAnswer() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked').value;
+            document.getElementById("result").innerText = "Ваш ответ: " + (selectedAnswer === "yes" ? "Да" : "Нет");
+        }
+    </script>
+</body>
+</html>
+
